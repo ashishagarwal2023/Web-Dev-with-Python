@@ -10,5 +10,17 @@
                 <li>{{fruit}}
             {% endfor %}
         </ol>
+        {% if choco %}
+            <p>I like chocolates!</p>
+        {% else %}
+            <p>I don't like chocolates!</p>
+        {% endif %}
+
+        <p>Cheap sale:</p>
+        <ul>
+        {% for product in shopItems %}
+            <li>{{product.name}} - ${{product.price}}</li>
+        {% endfor %}
+        </ul>
     </body>
 </html>
