@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>
-        {% block title %} {% endblock %}
+        {% block title %}{% endblock %}
     </title>
 </head>
 <body>
-    {% import "header.jinja" %}
+    {% include "header.jinja" %}
     {% block contents %} {% endblock %}
-    {% import "footer.jinja" %}
+    {% include "footer.jinja" %}
 </body>
 </html>
