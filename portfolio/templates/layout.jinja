@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+</head>
+<body>
+    {% import "header.jinja" %}
+    {% block contents %} {% endblock %}
+    {% import "footer.jinja" %}
+</body>
+</html>
