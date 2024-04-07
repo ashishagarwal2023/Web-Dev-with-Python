@@ -11,6 +11,7 @@ def index():
 
 @app.route("/updateName", methods=["POST"])
 def renameRoute():
+    print(request.form.keys())
     global name
     name = request.form.get("name")
     return redirect("/")
