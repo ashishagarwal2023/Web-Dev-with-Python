@@ -4,10 +4,12 @@
 </head>
 <body>
     <h1>Hello, {{name}}!</h1>
-    <p>Not {{name}}? Change your name below:</p>
+    <p>Not {{ name | safe }}? Change your name below:</p>
     <form action="/rename" method="POST">
         <input type="text" name="name" placeholder="New Name">
         <input type="submit" value="Rename">
     </form>
+    <p>The URL for the homepage from the "index" route I got: <b>{{url_for("index")}}</b></p>
+    <p>The URL for the rename route from the "renameRoute" route I got: <b>{{url_for("renameRoute")}}</b></p>
 </body>
 </html>

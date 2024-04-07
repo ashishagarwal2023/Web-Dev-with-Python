@@ -1,4 +1,5 @@
-from flask import render_template, Flask, request
+from flask import render_template, Flask, request, redirect
+from html import escape
 
 app = Flask(__name__)
 
@@ -6,13 +7,14 @@ name = "Ashish"
 
 @app.route("/")
 def index():
-    return render_template("index.jinja", name=name)
+    return render_template("index.jinja", name=escape(name))
 
-@app.route("/rename", methods=["POST"])
+@app.route("/updateName", methods=["POST"])
 def renameRoute():
     global name
     name = request.form.get("name")
-    return name
+    return redirect("/")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
